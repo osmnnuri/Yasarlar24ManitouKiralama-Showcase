@@ -6,7 +6,7 @@
 
 > Bu repo, projenin kaynak kodunu değil, teknik mimarisini ve özelliklerini tanıtan bir **showcase** (tanıtım) reposudur. Kaynak kod, müşteri verisi ve altyapı güvenliği nedeniyle özel (private) bir depoda tutulmaktadır.
 
-🔗 **Canlı site:** https://yasarlar-24-manitou-kira-1e9e0.web.app/
+🔗 **Canlı site:** https://yasarlar24manitoukiralama.com
 
 ---
 
