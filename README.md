@@ -114,4 +114,4 @@ Site yayında ve işletme tarafından kullanılıyor; geliştirme sürüyor.
 
 ## İletişim
 
-**osmnnuri** · [GitHub](https://github.com/osmnnuri) · osmannuriyasar57@gmail.com
+**osmnnuri** ·  [Web sitesi](https://osmnnuri.github.io) · [GitHub](https://github.com/osmnnuri) · osmannuriyasar57@gmail.com
