@@ -1,80 +1,117 @@
-# Yaşarlar 24 Manitou Kiralama
+<h1 align="center">Yaşarlar 24 Manitou Kiralama</h1>
 
-**Üretimde çalışan, gerçek bir işletme için geliştirilmiş tam kapsamlı ticari web platformu.**
+<p align="center">
+  Gerçek bir işletme için sıfırdan tasarlayıp geliştirdiğim, canlıda çalışan web sitesi.<br>
+  İnteraktif hizmet haritası, otomatik yorum moderasyonu, yönetim paneli ve teknik SEO.
+</p>
 
-İstanbul Anadolu Yakası'nda (Pendik, Tuzla, Sultanbeyli, Kaynarca, Kurtköy, Maltepe, Kartal, Ümraniye, Ataşehir, Sancaktepe, Çekmeköy) hizmet veren gerçek bir Manitou teleskopik yükleyici kiralama işletmesi için sıfırdan tasarlayıp geliştirdiğim, halihazırda canlı ortamda çalışan bir web sitesi.
-
-> Bu repo, projenin kaynak kodunu değil, teknik mimarisini ve özelliklerini tanıtan bir **showcase** (tanıtım) reposudur. Kaynak kod, müşteri verisi ve altyapı güvenliği nedeniyle özel (private) bir depoda tutulmaktadır.
-
-🔗 **Canlı site:** https://yasarlar24manitoukiralama.com
-
----
-
-## Proje Hakkında
-
-Bu proje, "bir esnaf için basit bir tanıtım sitesi" fikrinden başlayıp, gerçek bir işletmenin ihtiyaçlarına göre üretim ortamında çalışan bir platforma dönüştü. Amaç sadece bir web sitesi değil, işletme sahibinin günlük operasyonunu (fiyat sorgusu, müşteri yorumları, hizmet bölgesi bilgisi) kolaylaştıran uçtan uca bir sistem kurmaktı.
-
-## Öne Çıkan Özellikler
-
-### 🗺️ İnteraktif Hizmet Bölgesi Haritası
-Gerçek İstanbul ilçe sınırlarına dayalı, elle optimize edilmiş bir SVG harita. Hizmet verilen ilçeler tıklanabilir, hover ve tıklama anında animasyonlu geri bildirim veriyor, bölgeye özel fiyatlandırma bilgisini anlık açılan bir kart üzerinden gösteriyor. Resmî ilçe sayılmayan ama önemli bir bölge olan mahalleler için harita üzerinde ayrı "pin" işaretleri kullanıldı.
-
-### 🛡️ Otomatik İçerik Moderasyonu
-Kullanıcıların bıraktığı yorumlar, yayınlanmadan önce sunucu tarafında (Cloud Functions) çalışan bir **anahtar kelime ve spam filtresinden** geçiyor: küfür/argo içeren kelimeler, link/telefon numarası paylaşımı ve tanıtım/reklam kalıpları (indirim, kampanya vb.) otomatik olarak tespit edilip filtreleniyor. Filtreden geçen yorumlar `approved`, geçemeyenler `rejected` durumuna otomatik olarak güncelleniyor.
-
-Bu sayede site sahibi, gelen her yorumu manuel kontrol etmek zorunda kalmadan, sadece uygun içeriğin otomatik olarak yayınlandığı bir sistemle çalışıyor.
-
-### 🔐 Güvenlik Odaklı Mimari
-- Firestore Security Rules ile katı veri erişim kontrolü: istemci tarafı asla bir yorumun onay durumunu doğrudan değiştiremiyor, sadece "onay bekliyor" durumunda veri ekleyebiliyor
-- Moderasyon mantığı tamamen sunucu tarafında (Cloud Functions) çalışıyor, istemciden manipüle edilemiyor
-- Maliyet kontrolü için `maxInstances` sınırlaması ve konum bazlı (europe-west1) fonksiyon dağıtımı
-
-### 🔍 Teknik SEO
-- Schema.org (JSON-LD) yapılandırılmış veri: işletme türü, hizmet bölgeleri, çalışma saatleri, fiyat aralığı
-- `robots.txt` ve `sitemap.xml`
-- Open Graph meta etiketleri ve canonical URL yönetimi
-- Google Search Console ve Google Business Profile entegrasyonu
-
-### 📱 Duyarlı (Responsive) Tasarım
-Sıfırdan yazılmış, framework kullanmayan (vanilla) mobil uyumlu arayüz; özel hamburger menü, dokunmatik etkileşimler ve farklı ekran boyutlarına göre optimize edilmiş grid yapıları.
+<p align="center">
+  <a href="https://yasarlar24manitoukiralama.com"><b>▶ Canlı siteyi aç</b></a>
+</p>
 
 ---
 
-## Kullanılan Teknolojiler
+## Proje hakkında
 
-| Katman | Teknoloji |
+İstanbul Anadolu Yakası'nın tamamına hizmet veren bir Manitou teleskopik
+yükleyici kiralama işletmesinin web sitesi. "Bir esnaf için basit bir tanıtım
+sitesi" fikriyle başladı; işletme sahibinin geri bildirimleriyle, fiyat sorgusu,
+müşteri yorumları, hizmet bölgesi bilgisi ve ziyaret analizini tek yerde sunan
+bir siteye dönüştü.
+
+> Bu depo kaynak kodu değil, projenin mimarisini ve özelliklerini tanıtır.
+> Kaynak kod, müşteri verisi ve altyapı güvenliği nedeniyle özel bir depoda tutuluyor.
+
+## Özellikler
+
+| | |
 |---|---|
-| Frontend | HTML5, CSS3 (vanilla, framework yok), JavaScript (ES Modules) |
-| Backend / Altyapı | Firebase (Firestore, Cloud Functions v2, Hosting) |
-| Güvenlik | Firestore Security Rules |
-| Grafik / Harita | Elle optimize edilmiş SVG (ilçe sınırları) |
-| DevOps | Firebase CLI, Google Cloud IAM, Google Cloud Console |
-| SEO | Schema.org (JSON-LD), Google Search Console |
+| **İnteraktif hizmet haritası** | Gerçek ilçe sınırlarına dayalı SVG harita; ilçeye tıklayınca bölgeye özel fiyat bilgisi açılır |
+| **İlçe sayfaları** | Pendik, Tuzla, Kartal, Maltepe ve diğer bölgeler için ayrı tanıtım sayfaları |
+| **Otomatik yorum moderasyonu** | Yorumlar yayınlanmadan önce sunucuda küfür, bağlantı, telefon ve reklam filtresinden geçer |
+| **Yönetim paneli** | Yalnız işletme sahibinin girebildiği panel: ziyaretçi ve yorum istatistikleri, günlük rapor |
+| **Yapay zekâ destekli günlük rapor** | Seçilen günün trafiği özetlenir; gerçek ziyaretçiler botlardan ayrılır, Türkçe yorum üretilir |
+| **Teknik SEO** | Yapılandırılmış veri, site haritası, Open Graph etiketleri, Search Console ve Business Profile bağlantısı |
+| **Mobil uyumlu arayüz** | Framework kullanmadan yazıldı; özel menü, dokunmatik etkileşimler, ekran boyutuna göre düzen |
 
-## Mimari Akış (Yorum Moderasyonu)
+## Nasıl çalışıyor?
+
+### Yorum moderasyonu
 
 ```
-Kullanıcı yorum gönderir
+Ziyaretçi yorum gönderir
         ↓
 Firestore'a "pending" durumunda kaydedilir
         ↓
-Cloud Function otomatik tetiklenir (onDocumentCreated)
+Cloud Function kendiliğinden tetiklenir (onDocumentCreated)
         ↓
-Anahtar kelime / spam filtresi kontrolü
+Anahtar kelime ve spam filtresi çalışır
         ↓
-status güncellenir: approved / rejected
+Durum güncellenir: approved / rejected
         ↓
-Yalnızca "approved" yorumlar sitede listelenir
+Sitede yalnızca "approved" yorumlar listelenir
 ```
 
----
+İşletme sahibi yorumları tek tek kontrol etmek zorunda kalmaz; filtreden geçen
+yorum kendiliğinden yayınlanır.
 
-## Geliştirme Sürecinden Notlar
+### Hizmet bölgesi haritası
 
-- Proje, gerçek bir müşterinin (işletme sahibinin) geri bildirimleriyle iteratif olarak şekillendi
-- Firebase Blaze planına geçiş, Cloud Functions IAM/Eventarc yapılandırması, Secret Manager entegrasyonu gibi production-grade DevOps adımları uçtan uca deneyimlendi
-- `.com.tr` alan adı entegrasyonu ve DNS yönetimi (Natro) süreci yürütüldü
+İstanbul ilçe sınırları elle sadeleştirilmiş bir SVG olarak çizildi. Anadolu
+Yakası'nın tamamı hizmet bölgesi olarak işaretlidir; ilçeler tıklanabilir,
+üzerine gelince ve tıklayınca animasyonlu geri bildirim verir, bölgeye özel
+fiyat bilgisi bir kartta açılır. Resmî ilçe olmayan ama önemli bölgeler
+(Kaynarca, Kurtköy) haritada ayrı işaretlerle gösterilir.
 
----
+### Yönetim paneli ve günlük rapor
 
-*Bu proje aktif olarak geliştirilmeye devam ediyor — sıradaki adımlar arasında yorum moderasyonunu manuel override edebilen, bölgesel talep analizini görselleştiren bir admin paneli bulunuyor.*
+```
+Sayfa açılır → ziyaret kaydedilir (Cloud Function)
+        ↓
+İşletme sahibi panele giriş yapar ve bir gün seçer
+        ↓
+O günün ziyaretleri üçe ayrılır: gerçek ziyaretçi / dış bot / altyapı botu
+        ↓
+Tekil ziyaretçi, bölge, sayfa ve saat dağılımı hesaplanır
+        ↓
+Google Gemini bu sayılardan Türkçe bir özet rapor yazar
+```
+
+Panelde bölgelere göre tekil ziyaretçi, bölgelere göre yorum yoğunluğu, sayfa
+dağılımı ve saatlik ziyaret yoğunluğu görüntülenir.
+
+## Kullanılan teknolojiler
+
+| Katman | Teknoloji |
+|---|---|
+| Arayüz | HTML5, CSS3 ve JavaScript (ES Modules); framework yok |
+| Veri ve sunucu | Firebase: Firestore, Cloud Functions v2, Hosting, Authentication |
+| Güvenlik | Firestore Security Rules, Secret Manager |
+| Yapay zekâ | Google Gemini (günlük trafik özeti) |
+| Harita | Elle sadeleştirilmiş SVG (ilçe sınırları) |
+| SEO | Schema.org (JSON-LD), robots.txt, sitemap.xml, canonical URL, Open Graph |
+| Yayın ve yönetim | Firebase CLI, Google Cloud IAM, Google Cloud Console |
+
+### Öne çıkan teknik işler
+
+- **Moderasyon tamamen sunucuda.** Filtre Cloud Functions'ta çalışır; tarayıcıdan
+  atlanamaz ya da değiştirilemez. Ziyaretçi bir yorumun onay durumunu
+  değiştiremez, yalnızca "onay bekliyor" olarak yorum ekleyebilir.
+- **Bot ayrımı.** Arama motoru tarayıcıları ve barındırma altyapısının kendi
+  kontrolleri gerçek ziyaretçilerden ayrılır; istatistikler kirlenmez.
+- **Gizli anahtar yönetimi.** Yapay zekâ servisinin anahtarı kodda durmaz;
+  Secret Manager'da saklanır ve yalnız ilgili fonksiyona verilir.
+- **Yetkili erişim.** Rapor yalnız işletme sahibinin hesabıyla istenebilir;
+  kimlik sunucuda doğrulanır.
+- **Maliyet kontrolü.** Fonksiyonlar `maxInstances` ile sınırlandı ve
+  `europe-west1` bölgesinde çalışıyor.
+- **Canlıya alma süreci.** Firebase Blaze planına geçiş, Cloud Functions için
+  IAM ve Eventarc yapılandırması, alan adı ve DNS yönetimi.
+
+## Durum
+
+Site yayında ve işletme tarafından kullanılıyor; geliştirme sürüyor.
+
+## İletişim
+
+**osmnnuri** · [GitHub](https://github.com/osmnnuri) · osmannuriyasar57@gmail.com
